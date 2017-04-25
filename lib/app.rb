@@ -9,12 +9,16 @@ get "/secret" do
 end
 
 get "/random-cat" do
-   @cat_name = ["Amigo", "Oscar", "Viking"].sample
+   @name = ["Amigo", "Oscar", "Viking"].sample
   erb(:index)
 end
 
-get '/named-cat' do
+post '/named-cat' do
   p params
-  @cat_name = params[:name]
+  @name = params[:name]
   erb(:index)
+end
+
+get "/post_cat" do
+  erb(:page)
 end
